@@ -1,0 +1,135 @@
+.stopwatch-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .stopwatch-card {
+    width: 300px;
+    height: 350px;
+    // background-color: gray;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 0px 4px 0px gray;
+
+    &--header {
+      //   background-color: red;
+      opacity: 0.5;
+      text-align: center;
+    }
+    &--body {
+      width: 300px;
+      height: 200px;
+      //   background-color: rgb(255, 0, 191);
+      position: relative;
+      .timer {
+        position: absolute;
+        top: 50px;
+        left: 70px;
+        width: 150px;
+        height: 150px;
+        background-color: black;
+        border-radius: 50%;
+        z-index: 2;
+        transform: translateY(-1px);
+        .display {
+          margin-left: 35px;
+          margin-top: 50px;
+          .minutes {
+            font-size: 20px;
+            // padding: 5px;
+          }
+          .seconds {
+            font-size: 20px;
+          }
+          .mseconds {
+            font-size: 16px;
+          }
+        }
+      }
+      .bg-border {
+        z-index: 1;
+        position: absolute;
+        top: 44px;
+        left: 65px;
+        width: 160px;
+        height: 160px;
+        color: blue;
+        background-image: linear-gradient(to right, red, blue);
+        transform: rotate(30deg);
+        background-color: transparent;
+        // border: 5px solid;
+        // border-bottom-color: red;
+        border-radius: 50%;
+        animation: borderRotate 10s infinite linear;
+        @keyframes borderRotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          50% {
+            transform: rotate(180deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+    &--footer {
+      width: 100%;
+      height: 120px;
+      //   background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        padding: 5px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        margin: 8px;
+        text-transform: uppercase;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.3s ease-in;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+      .start {
+        button {
+          background-color: rgb(0, 128, 0);
+          color: rgb(253, 253, 253);
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+      .stop {
+        button {
+          background-color: rgb(255, 0, 0);
+          color: rgb(255, 255, 255);
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+      .resume {
+        button {
+          background-color: rgb(255, 255, 0);
+          color: rgb(0, 0, 0);
+          font-size: 13px;
+          padding: 4px 4px;
+        }
+      }
+    }
+    .restart {
+      button {
+        background-color: #fff;
+        color: rgb(0, 0, 0);
+        padding: 4px 4px;
+        font-size: 14px;
+      }
+    }
+  }
+}
