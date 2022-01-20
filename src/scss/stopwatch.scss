@@ -133,3 +133,9 @@
     }
   }
 }
+
+@media only screen and (max-width: 576px) {
+  .stopwatch-card--footer {
+    transform: translateY(30px);
+  }
+}
