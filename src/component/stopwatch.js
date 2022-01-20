@@ -42,7 +42,7 @@ function Stopwatch(params) {
             </div>
             <div className="stop">
               {timerOn && (
-                <button onClick={() => setTimerOn(false)}>Stop</button>
+                <button onClick={() => setTimerOn(false)}>Pause</button>
               )}
             </div>
             <div className="resume">
